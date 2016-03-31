@@ -12,41 +12,44 @@ Install LAMP server on centos 7.
 let’s start
 
 Apache installation
-#Step 1 » Update the repositories.
+##Step 1 » Update the repositories.
 [root@ ^_^ ~]# yum check-update
 
-#Step 2 » After updating repository, issue the below command to install apache package.
+##Step 2 » After updating repository, issue the below command to install apache package.
 [root@ ^_^ ~]# yum install httpd
 
-#Step 3 » Now start the service and enable it at startup.
+##Step 3 » Now start the service and enable it at startup.
 Command to start the service
+
 [root@ ^_^ ~]# systemctl start httpd.service
+
 Command to enable at startup
+
 [root@ ^_^ ~]# systemctl enable httpd.service
 
-#Step 4 » By default, Apache will listen on port 80. you need to exclude from firewall.
-you can simply exclude http service from firewall.
+##Step 4 » By default, Apache will listen on port 80. you need to exclude from firewall.
+ you can simply exclude http service from firewall.
 [root@ ^_^ ~]# firewall-cmd --permanent --add-service http
-or you can exclude using port number. Below command will be useful for ports other than 80
+ or you can exclude using port number. Below command will be useful for ports other than 80
 [root@ ^_^ ~]# firewall-cmd --permanent --add-port=8080/tcp
 
-#Step 5 » Now restart firewall service.
+##Step 5 » Now restart firewall service.
 [root@ ^_^ ~]# systemctl restart firewalld.service
 
-#Step 6 » Apache installation is over . For testing, open http://serverip in your browser, you can see apache demo page like below.
+##Step 6 » Apache installation is over . For testing, open http://serverip in your browser, you can see apache demo page like below.
 install lamp server on centos 7
 
 MySQL installation.
-#Step 7 » Start installing MariaDB, MySQL drop-in replacement.
+##Step 7 » Start installing MariaDB, MySQL drop-in replacement.
 [root@ ^_^ ~]# yum install mariadb-server mariadb
 
-#Step 8 » Now start the service and enable it at startup.
+##Step 8 » Now start the service and enable it at startup.
 Start the service
 [root@ ^_^ ~]# systemctl start mariadb
 Enable at startup
 [root@ ^_^ ~]# systemctl enable mariadb.service
 
-#Step 9 » Secure your DB installation. Type the below command and provide values.
+##Step 9 » Secure your DB installation. Type the below command and provide values.
 [root@ ^_^ ~]# mysql_secure_installation
 1. current password ( Leave blank and hit Enter ).
 2. Enter new password.
@@ -55,7 +58,7 @@ and Hit enter for all the other options.
 
 
  
-#Step 10 » MariaDB installation is over. For testing, Check login into DB using the below command.
+##Step 10 » MariaDB installation is over. For testing, Check login into DB using the below command.
 [root@ ~]# mysql -u root -p
 Enter password:
 Welcome to the MariaDB monitor. Commands end with ; or g.
@@ -65,21 +68,21 @@ Copyright (c) 2000, 2014, Oracle, Monty Program Ab and others.
 Type 'help;' or 'h' for help. Type 'c' to clear the current input statement.
 MariaDB [(none)]>
 PHP installation.
-#Step 11 » Install PHP and other recommended packages.
+##Step 11 » Install PHP and other recommended packages.
 [root@ ~]# yum install php php-mysql
 Additional packages are required if you would like to install phpmyadmin .
 [root@ ~]# yum install php-gd php-pear php-mbstring php-pgsql
 
-#Step 12 » Now restart apache service.
+##Step 12 » Now restart apache service.
 [root@ ~]# systemctl restart httpd.service
 
-#Step 13 » For testing, Create a file phpinfo.php in /var/www/html/ ( Default root directory ) and add the below code.
+##Step 13 » For testing, Create a file phpinfo.php in /var/www/html/ ( Default root directory ) and add the below code.
 <?php phpinfo(); ?>
 Now open http://serverIP/phpinfo.php in your browser. you will see PHP version and other configuration details like below.
 install lamp server  on centos 7
 
 Testing all together
-#Step 14 » For testing Database connectivity through PHP. Create a file dbtest.php in /var/www/html/ and add below code . Kindly replace with your root password in the below code .
+##Step 14 » For testing Database connectivity through PHP. Create a file dbtest.php in /var/www/html/ and add below code . Kindly replace with your root password in the below code .
 
 
 <?php
