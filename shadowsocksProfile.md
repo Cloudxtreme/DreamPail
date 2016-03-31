@@ -78,9 +78,10 @@ vi /etc/shadowsocks/config.json
  "workers": 1
  
 }
--------------------------------------------------------
+
+
 vi /etc/systemd/system/shadowsocks-server.service
--------------------------------------------------------
+
 [Unit]
 
 Description=Shadowsocks service
@@ -109,7 +110,7 @@ RestartSec=5s
 
 [Install]
 WantedBy=multi-user.target
--------------------
+
 
 systemctl start shadowsocks-server.service
 
@@ -135,7 +136,7 @@ edit sysctl.conf
 vi /etc/sysctl.conf
 
 add content:
-----------------------------------------------
+
 fs.file-max = 51200
 
 net.ipv4.conf.lo.accept_redirects=0
@@ -195,12 +196,11 @@ net.core.rmem_default = 8388608
 net.core.rmem_max = 67108864
 
 net.core.wmem_max = 67108864
----------------------------------------------
 
 execute this:
 
 sysctl -p
-----------------------------------------------
+
 
 #Install serverspeeder
 =========================================================
