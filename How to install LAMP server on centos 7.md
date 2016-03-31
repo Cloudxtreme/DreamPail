@@ -13,7 +13,7 @@ let’s start
 
 Apache installation
 ##Step 1 » Update the repositories.
-[root@ ^_^ ~]# yum check-update
+###[root@ ^_^ ~]# yum check-update
 
 ##Step 2 » After updating repository, issue the below command to install apache package.
 [root@ ^_^ ~]# yum install httpd
