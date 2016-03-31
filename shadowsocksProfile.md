@@ -127,9 +127,9 @@ vi /etc/security/limits.conf
 
 add two column
 
-* soft nofile 51200
-* 
-* hard nofile 51200
+* * soft nofile 51200
+ * 
+ * hard nofile 51200
 
 edit sysctl.conf
 
