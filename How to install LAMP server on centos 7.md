@@ -127,5 +127,44 @@ mysql_close($con);
 12 ?>
 
 Now access http://serverIP/dbtest.php . you should get congrats message.
+
+==========================================================
+#install phpmyadmin
+
+yum install phpmyadmin
+
+vi /etc/httpd/conf.d/phpMyAdmin.conf 
+
+
+Find these lines . ( Found 2 times )
+
+
+ # Apache 2.4
+ 
+     <RequireAny>
+     
+       Require ip 127.0.0.1
+       
+       Require ip ::1
+       
+     </RequireAny>
+     
+Replace with
+
+
+ # Apache 2.4
+ 
+    <RequireAny>
+    
+      # Require ip 127.0.0.1
+      
+      # Require ip ::1
+      
+      Require all granted
+      
+    </RequireAny>
+
+systemctl restart httpd.service
+
 Have a nice day.
 
