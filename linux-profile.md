@@ -2,7 +2,7 @@
 
 執行以下指令安裝 MariaDB:
 
-# yum install mariadb-server mariadb
+'# yum install mariadb-server mariadb
 啟動及設定開機自動執行 MariaDB:
 
 # systemctl start mariadb
