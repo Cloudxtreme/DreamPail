@@ -1,6 +1,6 @@
 # how to install lemp on your vps
 
-##step 1:Now, install Nginx with following command:
+###step 1:Now, install Nginx with following command:
 
 yum install nginx -y
 
