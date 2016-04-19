@@ -15,26 +15,6 @@ vi /etc/nginx/nginx.conf
 
 worker_processes 1;   //In my case it’s “1″. So I set this as ’1′,if you dont know,enter 'lscpu'
 
-Scroll down and make the changes as shown below.
--------------------------------------------------
-[...]
-server {
-        listen       80;
-        server_name  server.unixmen.local;
-        root         /usr/share/nginx/html;
-[...]
-    ## Uncomment or Add the following lines
-
-    location ~ \.php$ {
-            root           /usr/share/nginx/html;
-            fastcgi_pass   127.0.0.1:9000;
-            fastcgi_index  index.php;
-            fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
-            include        fastcgi_params;
-        }
-
-[...]
--------------------------------------------------
 systemctl restart nginx
 
 ==============================================================================
