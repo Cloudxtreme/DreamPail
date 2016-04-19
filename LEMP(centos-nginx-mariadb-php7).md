@@ -31,24 +31,24 @@ mysql_secure_installation
 
 #Install PHP
 
-##CentOS / RHEL 7
-#### yum install epel-release
-#### rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
-#### rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
-#### rpm -Uvh http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
+####CentOS / RHEL 7
+yum install epel-release
+rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
+rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
+rpm -Uvh http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
 
-##CentOS / RHEL 6
-#### yum install epel-release
-#### rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
-#### rpm -Uvh https://mirror.webtatic.com/yum/el6/latest.rpm
-#### rpm -Uvh http://repo.mysql.com/mysql-community-release-el6-5.noarch.rpm
+####CentOS / RHEL 6
+ yum install epel-release
+ rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
+ rpm -Uvh https://mirror.webtatic.com/yum/el6/latest.rpm
+ rpm -Uvh http://repo.mysql.com/mysql-community-release-el6-5.noarch.rpm
 
-#### yum install php70w
-#### yum search php70w
-#### yum install php70w-mysql php70w-xml php70w-soap php70w-xmlrpc
-#### yum install php70w-mbstring php70w-json php70w-gd php70w-mcrypt
-#### yum install php70w-fpm
-#### $ sudo nano /etc/nginx/conf.d/example.conf
+ yum install php70w
+ yum search php70w
+ yum install php70w-mysql php70w-xml php70w-soap php70w-xmlrpc
+ yum install php70w-mbstring php70w-json php70w-gd php70w-mcrypt
+ yum install php70w-fpm
+ $ sudo nano /etc/nginx/conf.d/example.conf
 
 ----------------------
 server {
@@ -77,13 +77,13 @@ server {
         }
 }
 ------------------------------
-#### systemctl restart nginx.service
-#### systemctl restart php-fpm.service
+ systemctl restart nginx.service
+ systemctl restart php-fpm.service
 
-#### firewall-cmd --permanent --zone=public --add-service=http
-#### firewall-cmd --permanent --zone=public --add-service=https
-#### firewall-cmd --reload
+ firewall-cmd --permanent --zone=public --add-service=http
+ firewall-cmd --permanent --zone=public --add-service=https
+ firewall-cmd --reload
 
 done!
-#### php -v
-#### nginx -v
+ php -v
+ nginx -v
