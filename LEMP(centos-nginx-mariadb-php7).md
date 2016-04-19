@@ -51,12 +51,12 @@ rpm -Uvh http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
  
  rpm -Uvh http://repo.mysql.com/mysql-community-release-el6-5.noarch.rpm
 
- yum install php70w
- yum search php70w
- yum install php70w-mysql php70w-xml php70w-soap php70w-xmlrpc
- yum install php70w-mbstring php70w-json php70w-gd php70w-mcrypt
- yum install php70w-fpm
- $ sudo nano /etc/nginx/conf.d/example.conf
+yum install php70w
+yum search php70w
+yum install php70w-mysql php70w-xml php70w-soap php70w-xmlrpc
+yum install php70w-mbstring php70w-json php70w-gd php70w-mcrypt
+yum install php70w-fpm
+$ sudo nano /etc/nginx/conf.d/example.conf
 
 ----------------------
 server {
