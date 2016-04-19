@@ -32,15 +32,23 @@ mysql_secure_installation
 #Install PHP
 
 ####CentOS / RHEL 7
+
 yum install epel-release
+
 rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
+
 rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
+
 rpm -Uvh http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
+
 
 ####CentOS / RHEL 6
  yum install epel-release
+ 
  rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
+ 
  rpm -Uvh https://mirror.webtatic.com/yum/el6/latest.rpm
+ 
  rpm -Uvh http://repo.mysql.com/mysql-community-release-el6-5.noarch.rpm
 
  yum install php70w
